@@ -127,16 +127,43 @@ export default function RootLayout({
       <body
         className={`${inter.className} min-h-screen text-white`}
         style={{
-          background: "#020817",
+          background: "#0d131a",
           backgroundAttachment: "fixed",
         }}
       >
-        <div className="grid-background-large min-h-screen">
+        <div className="grid-background-large min-h-screen relative overflow-hidden bg-[#0d131a]">
+          {/* Central Radial Light */}
+          <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,rgba(40,58,74,0.55)_0%,transparent_75%)] pointer-events-none z-0 animate-pulse-slow" />
+
+          {/* Top-Right Decorative Geometric Shapes */}
+          <div className="fixed top-[-150px] right-[-150px] w-[600px] h-[600px] pointer-events-none z-0 opacity-75 animate-shape-tr">
+            {/* Box 1 */}
+            <div className="absolute top-0 right-0 w-[320px] h-[320px] border-[14px] border-[#253544]/60 rounded-sm shadow-[15px_15px_40px_rgba(0,0,0,0.65)] bg-[#0d131a]/10 backdrop-blur-[1px]" />
+            {/* Box 2 */}
+            <div className="absolute top-[80px] right-[80px] w-[340px] h-[340px] border-[18px] border-[#1d2a36]/80 rounded-sm shadow-[20px_20px_50px_rgba(0,0,0,0.7)] bg-[#0d131a]/5 backdrop-blur-[1px]" />
+            {/* Box 3 */}
+            <div className="absolute top-[-50px] right-[200px] w-[220px] h-[450px] border-[12px] border-[#202e3b]/40 rounded-sm shadow-[15px_15px_35px_rgba(0,0,0,0.55)]" />
+            {/* Box 4 */}
+            <div className="absolute top-[250px] right-[-50px] w-[260px] h-[260px] border-[16px] border-[#1a2530]/70 rounded-sm shadow-[15px_15px_35px_rgba(0,0,0,0.6)]" />
+          </div>
+
+          {/* Bottom-Left Decorative Geometric Shapes */}
+          <div className="fixed bottom-[-150px] left-[-150px] w-[600px] h-[600px] pointer-events-none z-0 opacity-75 animate-shape-bl">
+            {/* Box 1 */}
+            <div className="absolute bottom-0 left-0 w-[320px] h-[320px] border-[14px] border-[#253544]/60 rounded-sm shadow-[-15px_-15px_40px_rgba(0,0,0,0.65)] bg-[#0d131a]/10 backdrop-blur-[1px]" />
+            {/* Box 2 */}
+            <div className="absolute bottom-[80px] left-[80px] w-[340px] h-[340px] border-[18px] border-[#1d2a36]/80 rounded-sm shadow-[-20px_-20px_50px_rgba(0,0,0,0.7)] bg-[#0d131a]/5 backdrop-blur-[1px]" />
+            {/* Box 3 */}
+            <div className="absolute bottom-[-50px] left-[200px] w-[220px] h-[450px] border-[12px] border-[#202e3b]/40 rounded-sm shadow-[-15px_-15px_35px_rgba(0,0,0,0.55)]" />
+            {/* Box 4 */}
+            <div className="absolute bottom-[250px] left-[-50px] w-[260px] h-[260px] border-[16px] border-[#1a2530]/70 rounded-sm shadow-[-15px_-15px_35px_rgba(0,0,0,0.6)]" />
+          </div>
+
           <SmoothScroll>
             <FramerLazyMotion>
               <MouseMoveEffect />
               <Navbar />
-              <main className="">{children}</main>
+              <main className="relative z-10">{children}</main>
               <Footer />
               <JumpToTop />
               <Toaster position="top-center" />

@@ -128,8 +128,8 @@
 /* Subtle Grid Background - Refined for Midnight Liquid Glass */
 .grid-background {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
   background-size: 40px 40px;
   mask-image: radial-gradient(circle at center, black 50%, transparent 100%);
   -webkit-mask-image: radial-gradient(circle at center, black 50%, transparent 100%);
@@ -137,9 +137,58 @@
 
 .grid-background-large {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.008) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.008) 1px, transparent 1px);
   background-size: 80px 80px;
+}
+
+@keyframes aurora-drift-1 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(50px, -70px) scale(1.15);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes aurora-drift-2 {
+  0% {
+    transform: translate(0px, 0px) scale(1.1);
+  }
+  50% {
+    transform: translate(-60px, 50px) scale(0.85);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1.1);
+  }
+}
+
+@keyframes aurora-drift-3 {
+  0% {
+    transform: translate(0px, 0px) scale(0.95);
+  }
+  40% {
+    transform: translate(40px, 60px) scale(1.2);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(0.95);
+  }
+}
+
+.animate-aurora-1 {
+  animation: aurora-drift-1 25s ease-in-out infinite;
+}
+.animate-aurora-2 {
+  animation: aurora-drift-2 30s ease-in-out infinite;
+}
+.animate-aurora-3 {
+  animation: aurora-drift-3 28s ease-in-out infinite;
 }
 
 /* Custom premium scrollbar */
@@ -293,4 +342,36 @@ textarea:focus {
 .animate-spin {
   border-color: rgba(255, 255, 255, 0.2);
   border-top-color: #3b82f6;
+}
+
+@keyframes shape-drift-tr {
+  0% {
+    transform: rotate(35deg) translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: rotate(37deg) translate(8px, -12px) scale(1.02);
+  }
+  100% {
+    transform: rotate(35deg) translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes shape-drift-bl {
+  0% {
+    transform: rotate(35deg) translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: rotate(33deg) translate(-8px, 12px) scale(1.02);
+  }
+  100% {
+    transform: rotate(35deg) translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-shape-tr {
+  animation: shape-drift-tr 20s ease-in-out infinite;
+}
+
+.animate-shape-bl {
+  animation: shape-drift-bl 22s ease-in-out infinite;
 }
